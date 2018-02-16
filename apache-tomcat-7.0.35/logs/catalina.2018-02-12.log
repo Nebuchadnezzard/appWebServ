@@ -1,0 +1,34 @@
+févr. 12, 2018 2:23:06 PM org.apache.catalina.core.AprLifecycleListener init
+INFOS: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Microsoft MPI\Bin\;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\app\Administrateur\product\11.1.0\client_1\BIN\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\SASHome\Secure\ccme4;C:\Program Files\SASHome\x86\Secure\ccme4;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\Git\cmd;C:\Windows\CCM;C:\Program Files (x86)\Graphviz2.38\bin\;C:\Windows\CCM;C:\Windows\CCM;C:\Windows\CCM;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\dotnet\;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Users\couderc\AppData\Local\Microsoft\WindowsApps;.
+févr. 12, 2018 2:23:07 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["http-bio-8080"]
+févr. 12, 2018 2:23:07 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["ajp-bio-8009"]
+févr. 12, 2018 2:23:07 PM org.apache.catalina.startup.Catalina load
+INFOS: Initialization processed in 1036 ms
+févr. 12, 2018 2:23:07 PM org.apache.catalina.core.StandardService startInternal
+INFOS: Démarrage du service Catalina
+févr. 12, 2018 2:23:07 PM org.apache.catalina.core.StandardEngine startInternal
+INFOS: Starting Servlet Engine: Apache Tomcat/7.0.35
+févr. 12, 2018 2:23:07 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\docs de l'application web
+févr. 12, 2018 2:23:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\examples de l'application web
+févr. 12, 2018 2:23:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\host-manager de l'application web
+févr. 12, 2018 2:23:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\manager de l'application web
+févr. 12, 2018 2:23:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\ROOT de l'application web
+févr. 12, 2018 2:23:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\TP2 de l'application web
+févr. 12, 2018 2:23:10 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\TP3 de l'application web
+févr. 12, 2018 2:23:10 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["http-bio-8080"]
+févr. 12, 2018 2:23:10 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["ajp-bio-8009"]
+févr. 12, 2018 2:23:10 PM org.apache.catalina.startup.Catalina start
+INFOS: Server startup in 3027 ms
+févr. 12, 2018 2:25:01 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\TP4 de l'application web

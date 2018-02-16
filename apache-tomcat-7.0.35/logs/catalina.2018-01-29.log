@@ -1,0 +1,74 @@
+janv. 29, 2018 3:49:50 PM org.apache.catalina.core.AprLifecycleListener init
+INFOS: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft MPI\Bin\;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\app\Administrateur\product\11.1.0\client_1\BIN\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\SASHome\Secure\ccme4;C:\Program Files\SASHome\x86\Secure\ccme4;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\Git\cmd;C:\Windows\CCM;C:\Program Files (x86)\Graphviz2.38\bin\;C:\Windows\CCM;C:\Windows\CCM;C:\Windows\CCM;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Users\couderc\AppData\Local\Microsoft\WindowsApps;;.
+janv. 29, 2018 3:49:51 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["http-bio-8080"]
+janv. 29, 2018 3:49:51 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["ajp-bio-8009"]
+janv. 29, 2018 3:49:51 PM org.apache.catalina.startup.Catalina load
+INFOS: Initialization processed in 716 ms
+janv. 29, 2018 3:49:51 PM org.apache.catalina.core.StandardService startInternal
+INFOS: Démarrage du service Catalina
+janv. 29, 2018 3:49:51 PM org.apache.catalina.core.StandardEngine startInternal
+INFOS: Starting Servlet Engine: Apache Tomcat/7.0.35
+janv. 29, 2018 3:49:51 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\docs de l'application web
+janv. 29, 2018 3:49:51 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\examples de l'application web
+janv. 29, 2018 3:49:52 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\host-manager de l'application web
+janv. 29, 2018 3:49:52 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\manager de l'application web
+janv. 29, 2018 3:49:52 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\ROOT de l'application web
+janv. 29, 2018 3:49:52 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["http-bio-8080"]
+janv. 29, 2018 3:49:53 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["ajp-bio-8009"]
+janv. 29, 2018 3:49:53 PM org.apache.catalina.startup.Catalina start
+INFOS: Server startup in 1809 ms
+janv. 29, 2018 3:56:20 PM org.apache.catalina.core.AprLifecycleListener init
+INFOS: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft MPI\Bin\;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\app\Administrateur\product\11.1.0\client_1\BIN\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\SASHome\Secure\ccme4;C:\Program Files\SASHome\x86\Secure\ccme4;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\Git\cmd;C:\Windows\CCM;C:\Program Files (x86)\Graphviz2.38\bin\;C:\Windows\CCM;C:\Windows\CCM;C:\Windows\CCM;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Users\couderc\AppData\Local\Microsoft\WindowsApps;;.
+janv. 29, 2018 3:56:20 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["http-bio-8080"]
+janv. 29, 2018 3:56:20 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["ajp-bio-8009"]
+janv. 29, 2018 3:56:20 PM org.apache.catalina.startup.Catalina load
+INFOS: Initialization processed in 641 ms
+janv. 29, 2018 3:56:20 PM org.apache.catalina.core.StandardService startInternal
+INFOS: Démarrage du service Catalina
+janv. 29, 2018 3:56:20 PM org.apache.catalina.core.StandardEngine startInternal
+INFOS: Starting Servlet Engine: Apache Tomcat/7.0.35
+janv. 29, 2018 3:56:20 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\docs de l'application web
+janv. 29, 2018 3:56:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\examples de l'application web
+janv. 29, 2018 3:56:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\host-manager de l'application web
+janv. 29, 2018 3:56:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\manager de l'application web
+janv. 29, 2018 3:56:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\ROOT de l'application web
+janv. 29, 2018 3:56:21 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["http-bio-8080"]
+janv. 29, 2018 3:56:21 PM org.apache.coyote.AbstractProtocol start
+INFOS: Starting ProtocolHandler ["ajp-bio-8009"]
+janv. 29, 2018 3:56:21 PM org.apache.catalina.startup.Catalina start
+INFOS: Server startup in 1130 ms
+janv. 29, 2018 4:02:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\apache-tomcat-7.0.35\webapps\TP2 de l'application web
+janv. 29, 2018 4:27:04 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement du contexte [/TP2] a démarré
+janv. 29, 2018 4:27:05 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement de ce contexte est terminé
+janv. 29, 2018 4:32:20 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement du contexte [/TP2] a démarré
+janv. 29, 2018 4:32:20 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement de ce contexte est terminé
+janv. 29, 2018 4:37:23 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement du contexte [/TP2] a démarré
+janv. 29, 2018 4:37:24 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement de ce contexte est terminé
+janv. 29, 2018 4:53:46 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement du contexte [/TP2] a démarré
+janv. 29, 2018 4:53:46 PM org.apache.catalina.core.StandardContext reload
+INFOS: Le rechargement de ce contexte est terminé

@@ -1,0 +1,26 @@
+janv. 29, 2018 3:56:34 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+janv. 29, 2018 3:56:34 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: init: Global resources are available
+janv. 29, 2018 3:56:34 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:04:46 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:27:00 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:27:04 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: restart: Reloading web application '/TP2'
+janv. 29, 2018 4:27:05 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:32:20 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: restart: Reloading web application '/TP2'
+janv. 29, 2018 4:32:20 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:37:23 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: restart: Reloading web application '/TP2'
+janv. 29, 2018 4:37:24 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
+janv. 29, 2018 4:53:46 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: restart: Reloading web application '/TP2'
+janv. 29, 2018 4:53:46 PM org.apache.catalina.core.ApplicationContext log
+INFOS: HTMLManager: list: Listing contexts for virtual host 'localhost'
