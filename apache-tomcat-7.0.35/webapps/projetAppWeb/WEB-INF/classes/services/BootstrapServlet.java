@@ -8,6 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Classe qui déclare quelle PersistentMediatheque charger
+ * ! A utiliser après le démarrage du serveur
+ * @author Jacques COUDERC
+ * @since 23/02/2018
+ * @version 1.0
+ */
 @WebServlet ("/boot")
 public class BootstrapServlet extends HttpServlet {
 
@@ -22,6 +29,7 @@ public class BootstrapServlet extends HttpServlet {
 		String persistMediaName = request.getParameter("persistMediaName");
 		
 		if(persistMediaName == null) {
+			// Affichage du form
 			out.println("<!doctype html>");
 			out.println("<html lang=\"fr\">");
 			out.println("<head><title>Admin</title></head>");
