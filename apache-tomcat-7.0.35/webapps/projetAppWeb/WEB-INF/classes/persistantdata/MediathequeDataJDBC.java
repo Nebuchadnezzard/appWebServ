@@ -7,13 +7,13 @@ import mediatheque.*;
 // classe mono-instance  dont l'unique instance n'est connue que de la bibliotheque
 // via une auto-déclaration dans son bloc static
 
-public class MediathequeData implements PersistentMediatheque {
+public class MediathequeDataJDBC implements PersistentMediatheque {
 // Jean-François Brette 01/01/2018
 	static {
-		Mediatheque.getInstance().setData(new MediathequeData());
+		Mediatheque.getInstance().setData(new MediathequeDataJDBC());
 	}
 
-	private MediathequeData() {
+	private MediathequeDataJDBC() {
 	}
 
 	// renvoie la liste de tous les documents de la bibliothèque

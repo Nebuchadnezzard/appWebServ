@@ -1,0 +1,2 @@
+- Les servlets/jsp doivent déclarer le type de PersistantMediatheque dans le bloc static
+- supprimer le servlet bootstrap apres la première utilisation dans le web.xml

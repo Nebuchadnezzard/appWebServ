@@ -3,6 +3,8 @@ REM BASE DE DONNEES PROJET APP WEB SERVEUR
 REM JACQUES, PIERRE COUDERC
 REM **************************************************************************
 
+REM TODO Changer : une seule table document avec un champ typeDoc
+
 CREATE TABLE UTILISATEUR (
 	numUtil INTEGER CONSTRAINT pk_util PRIMARY KEY,
 	password VARCHAR2(30),

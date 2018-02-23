@@ -1,0 +1,207 @@
+févr. 23, 2018 2:31:15 PM org.apache.catalina.core.AprLifecycleListener init
+INFOS: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft MPI\Bin\;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\app\Administrateur\product\11.1.0\client_1\BIN\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\SASHome\Secure\ccme4;C:\Program Files\SASHome\x86\Secure\ccme4;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\Git\cmd;C:\Windows\CCM;C:\Program Files (x86)\Graphviz2.38\bin\;C:\Windows\CCM;C:\Windows\CCM;C:\Windows\CCM;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Xoreax\IncrediBuild;C:\Program Files\Anaconda3;C:\Program Files\Anaconda3\Scripts;C:\Program Files\Anaconda3\Library\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Users\couderc1\AppData\Local\Microsoft\WindowsApps;.
+févr. 23, 2018 2:31:16 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["http-bio-8080"]
+févr. 23, 2018 2:31:16 PM org.apache.coyote.AbstractProtocol init
+GRAVE: Failed to initialize end point associated with ProtocolHandler ["http-bio-8080"]
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 17 more
+
+févr. 23, 2018 2:31:16 PM org.apache.catalina.core.StandardService initInternal
+GRAVE: Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:106)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+Caused by: org.apache.catalina.LifecycleException: L''initialisation du gestionnaire de protocole a échoué
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:983)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	... 13 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 17 more
+
+févr. 23, 2018 2:31:16 PM org.apache.coyote.AbstractProtocol init
+INFOS: Initializing ProtocolHandler ["ajp-bio-8009"]
+févr. 23, 2018 2:31:16 PM org.apache.coyote.AbstractProtocol init
+GRAVE: Failed to initialize end point associated with ProtocolHandler ["ajp-bio-8009"]
+java.net.BindException: Address already in use: JVM_Bind <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 16 more
+
+févr. 23, 2018 2:31:16 PM org.apache.catalina.core.StandardService initInternal
+GRAVE: Failed to initialize connector [Connector[AJP/1.3-8009]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-8009]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:106)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:633)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:658)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:281)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+Caused by: org.apache.catalina.LifecycleException: L''initialisation du gestionnaire de protocole a échoué
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:983)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:406)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:610)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:429)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:981)
+	... 13 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:393)
+	... 16 more
+
+févr. 23, 2018 2:31:16 PM org.apache.catalina.startup.Catalina load
+INFOS: Initialization processed in 493 ms
+févr. 23, 2018 2:31:16 PM org.apache.catalina.core.StandardService startInternal
+INFOS: Démarrage du service Catalina
+févr. 23, 2018 2:31:16 PM org.apache.catalina.core.StandardEngine startInternal
+INFOS: Starting Servlet Engine: Apache Tomcat/7.0.35
+févr. 23, 2018 2:31:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\docs de l'application web
+févr. 23, 2018 2:31:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\examples de l'application web
+févr. 23, 2018 2:31:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\host-manager de l'application web
+févr. 23, 2018 2:31:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\manager de l'application web
+févr. 23, 2018 2:31:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\projetAppWeb de l'application web
+févr. 23, 2018 2:31:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\ROOT de l'application web
+févr. 23, 2018 2:31:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\TP2 de l'application web
+févr. 23, 2018 2:31:18 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\TP3 de l'application web
+févr. 23, 2018 2:31:18 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFOS: Déploiement du répertoire Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35\webapps\TP4 de l'application web
+févr. 23, 2018 2:31:18 PM org.apache.catalina.startup.Catalina start
+INFOS: Server startup in 2548 ms
+févr. 23, 2018 2:31:18 PM org.apache.catalina.core.StandardServer await
+GRAVE: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:427)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:766)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:712)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:322)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:456)
+
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol pause
+INFOS: Pausing ProtocolHandler ["http-bio-8080"]
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol pause
+INFOS: Pausing ProtocolHandler ["ajp-bio-8009"]
+févr. 23, 2018 2:31:18 PM org.apache.catalina.core.StandardService stopInternal
+INFOS: Arrêt du service Catalina
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol stop
+INFOS: Stopping ProtocolHandler ["http-bio-8080"]
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol destroy
+INFOS: Destroying ProtocolHandler ["http-bio-8080"]
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol stop
+INFOS: Stopping ProtocolHandler ["ajp-bio-8009"]
+févr. 23, 2018 2:31:18 PM org.apache.coyote.AbstractProtocol destroy
+INFOS: Destroying ProtocolHandler ["ajp-bio-8009"]
