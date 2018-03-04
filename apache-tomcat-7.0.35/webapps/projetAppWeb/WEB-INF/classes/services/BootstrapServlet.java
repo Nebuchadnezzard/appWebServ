@@ -23,7 +23,7 @@ public class BootstrapServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 3171475695277487275L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String persistMediaName = request.getParameter("persistMediaName");
