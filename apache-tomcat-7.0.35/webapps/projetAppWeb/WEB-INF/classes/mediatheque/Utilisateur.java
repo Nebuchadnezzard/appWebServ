@@ -3,6 +3,8 @@ package mediatheque;
 import java.util.ArrayList;
 import java.util.List;
 
+import persistantdata.Livre;
+
 public class Utilisateur {
 	
 	private List<Document> lesDocs;
@@ -13,6 +15,10 @@ public class Utilisateur {
 		this.nom = nom;
 		this.password = password;
 		this.lesDocs = new ArrayList<Document>();
+	}
+
+	public void emprunter(Document d) {
+		this.lesDocs.add(d);
 	}
 	
 	

@@ -2,6 +2,7 @@ package services;
 
 import javax.servlet.http.HttpServlet;
 
+@WebServlet("/ajout")
 public class ServiceAjout extends HttpServlet{
 
 	/**

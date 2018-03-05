@@ -7,19 +7,20 @@ import mediatheque.Utilisateur;
 public class Livre implements Document {
 	private int numero;
 	private String nomLivre;
-	private Utilisateur emprunteur;
+	private boolean estEmprunte;
 	
 	public Livre(String nomLivre, int numero) {
 		this.nomLivre = nomLivre;
 		this.numero = numero;
-		this.emprunteur = null;
+		this.estEmprunte = false;
 	}
 
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
 		synchronized(this) {
-			if(this.emprunteur == null) {
-				this.emprunteur = a;
+			if(this.estEmprunte == false) {
+				a.emprunter(this);
+				this.estEmprunte = true;
 			}
 			else {
 				throw new EmpruntException();
@@ -32,7 +33,7 @@ public class Livre implements Document {
 	@Override
 	public void retour() {
 		synchronized(this) {
-			this.emprunteur = null;
+			this.estEmprunte = false;
 		}
 	}
 

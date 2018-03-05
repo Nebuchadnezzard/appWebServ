@@ -3,40 +3,44 @@ package mediatheque;
 import java.util.List;
 
 /**
- cette classe représente la mediatheque du point de vue du domaine
- cette classe est un singleton
- elle a un attribut qui fait le lien avec les données persistentes
- 
- LES SERVLETS DOIVENT S'ADRESSER A CETTE CLASSE EXCLUSIVEMENT
- POUR INTERROGER LES DONNEES
-
- beaucoup des méthodes de Mediatheque sont déléguées à l'attribut de persistance
- qui devra répercuter ces opérations sur les données persistantes
-
-*/
+ * cette classe représente la mediatheque du point de vue du domaine cette
+ * classe est un singleton elle a un attribut qui fait le lien avec les données
+ * persistentes
+ * 
+ * LES SERVLETS DOIVENT S'ADRESSER A CETTE CLASSE EXCLUSIVEMENT POUR INTERROGER
+ * LES DONNEES
+ * 
+ * beaucoup des méthodes de Mediatheque sont déléguées à l'attribut de
+ * persistance qui devra répercuter ces opérations sur les données persistantes
+ * 
+ */
 public class Mediatheque {
-// Jean-François Brette 01/01/2018
+	// Jean-François Brette 01/01/2018
 
-// singleton standard ======================== 
+	// singleton standard ========================
 	static {
 		instance = new Mediatheque();
 	}
 	private static Mediatheque instance;
+
 	public static Mediatheque getInstance() {
 		return instance;
 	}
-	private Mediatheque () {}
-// fin - singleton standard ==================
 
-// lien avec les données persistantes +++++++++++++++
+	private Mediatheque() {
+	}
+	// fin - singleton standard ==================
+
+	// lien avec les données persistantes +++++++++++++++
 	private PersistentMediatheque data;
 
 	public void setData(PersistentMediatheque data) {
-		if (this.data == null) this.data = data;
+		if (this.data == null)
+			this.data = data;
 	}
-// fin - lien avec les données persistantes +++++++++
+	// fin - lien avec les données persistantes +++++++++
 
-// ********** action sur le document ***********************
+	// ********** action sur le document ***********************
 
 	// enregistre l'emprunt par l'abonné a du document d)
 
@@ -44,13 +48,13 @@ public class Mediatheque {
 		d.emprunter(a);
 	}
 
-	//enregistre le retour du document d)
+	// enregistre le retour du document d)
 
-	public void retour (Document d) {
+	public void retour(Document d) {
 		d.retour();
 	}
 
-// *********************** délégation **********************
+	// *********************** délégation **********************
 
 	// renvoie la liste de tous les documents de la bibliothèque
 
@@ -58,10 +62,10 @@ public class Mediatheque {
 		return data.tousLesDocuments();
 	}
 
-	// renvoie le user de login et passwd 
+	// renvoie le user de login et passwd
 	// si pas trouvé, renvoie null
-	
-	public Utilisateur getUser (String login, String password) {
+
+	public Utilisateur getUser(String login, String password) {
 		return data.getUser(login, password);
 	}
 
@@ -71,10 +75,10 @@ public class Mediatheque {
 	public Document getDocument(int numDocument) {
 		return data.getDocument(numDocument);
 	}
-	
+
 	// ajoute un nouveau document
 
-	public void nouveauDocument(int type, Object... args ) {
+	public void nouveauDocument(int type, Object... args) {
 		data.nouveauDocument(type, args);
 	};
 

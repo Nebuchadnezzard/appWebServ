@@ -2,6 +2,7 @@ package services;
 
 import javax.servlet.http.HttpServlet;
 
+@WebServlet("/retour")
 public class ServiceRetour extends HttpServlet {
 
 	/**

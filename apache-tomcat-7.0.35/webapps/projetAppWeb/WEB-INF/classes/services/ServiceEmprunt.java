@@ -2,6 +2,7 @@ package services;
 
 import javax.servlet.http.HttpServlet;
 
+@WebServlet("/emprunt")
 public class ServiceEmprunt extends HttpServlet {
 
 	/**
