@@ -1,2 +1,3 @@
 - Les servlets/jsp doivent déclarer le type de PersistantMediatheque dans le bloc static
-- supprimer le servlet bootstrap apres la première utilisation dans le web.xml
+- desactiver le servlet bootstrap apres la première utilisation dans le web.xml
+https://stackoverflow.com/questions/471745/how-many-jdbc-connections-in-java

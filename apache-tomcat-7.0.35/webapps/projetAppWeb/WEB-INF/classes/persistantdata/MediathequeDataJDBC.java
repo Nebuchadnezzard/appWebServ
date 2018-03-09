@@ -18,6 +18,11 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	private static String password = "GRP202US4";
 
 	static {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		Mediatheque.getInstance().setData(new MediathequeDataJDBC());
 	}
 
@@ -27,44 +32,39 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
 	public List<Document> tousLesDocuments() {
-		FactoryDocument factory = new FactoryDocument();
 		List<Document> resultat = null;
 		// charger le driver oracle
-		
-			try {
-				Class.forName("oracle.jdbc.OracleDriver");
-				// creer la co à la bd
-				Connection c = DriverManager.getConnection(url, user, password);
 
-				String req1 = "SELECT * FROM document";
-				Statement st = c.createStatement();
+		try {
+			
+			// creer la co à la bd
+			Connection c = DriverManager.getConnection(url, user, password);
 
-				ResultSet res = st.executeQuery(req1);
+			String req1 = "SELECT * FROM document";
+			Statement st = c.createStatement();
 
-				while (res.next()) {
-					String type = res.getString("type");
-					int num = res.getInt("numero");
-					String nom = res.getString("nom");
-					try {
-						Document d = factory.creerDoc(nom, num, type);
-						resultat.add(d);
-					} catch (Exception e) {
-						System.out.println("Le type n'existe pas");
-					}
+			ResultSet res = st.executeQuery(req1);
 
+			while (res.next()) {
+				String type = res.getString("type");
+				int num = res.getInt("numero");
+				String nom = res.getString("nom");
+				try {
+					Document d = FactoryDocument.creerDoc(nom, num, type);
+					resultat.add(d);
+				} catch (Exception e) {
+					System.out.println("Le type n'existe pas");
 				}
-				res.close();
-				st.close();
-				c.close();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+
 			}
-		
-		
+			res.close();
+			st.close();
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return resultat;
 
 	}
@@ -75,10 +75,9 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	public Utilisateur getUser(String login, String password) {
 		Utilisateur user = null;
 
-		
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			Connection c = DriverManager.getConnection(this.url, this.user, this.password);
+			Connection c = DriverManager.getConnection(MediathequeDataJDBC.url, MediathequeDataJDBC.user,
+					MediathequeDataJDBC.password);
 			String req = "SELECT * FROM user WHERE login ='" + login + "' AND password='" + password + "'";
 			Statement st = c.createStatement();
 			ResultSet res = st.executeQuery(req);
@@ -87,9 +86,6 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 			res.close();
 			st.close();
 			c.close();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,12 +98,10 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Document getDocument(int numDocument) {
-		FactoryDocument factory = new FactoryDocument();
 		String nom;
 		String type;
 		int num;
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
 			Connection c = DriverManager.getConnection(url, user, password);
 			String req = "SELECT * FROM document WHERE numero ='" + numDocument + "'";
 			Statement st = c.createStatement();
@@ -119,16 +113,13 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 			res.close();
 			st.close();
 			c.close();
-			return factory.creerDoc(nom, num, type);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return FactoryDocument.creerDoc(nom, num, type);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;// à changer
-		
+
 	}
 
 	@Override

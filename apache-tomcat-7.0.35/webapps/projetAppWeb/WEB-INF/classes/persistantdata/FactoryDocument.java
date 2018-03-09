@@ -4,7 +4,7 @@ import mediatheque.*;
 
 public class FactoryDocument {
 
-	public Document creerDoc(String nom, int num, String type) {
+	public static Document creerDoc(String nom, int num, String type) {
 
 		switch (type) {
 		case "CD":
@@ -14,6 +14,7 @@ public class FactoryDocument {
 		case "Livre":
 			return new Livre(nom, num);
 		}
+		return null;
 
 	}
 }

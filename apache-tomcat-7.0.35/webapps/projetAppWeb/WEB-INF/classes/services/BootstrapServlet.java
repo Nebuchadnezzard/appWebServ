@@ -3,6 +3,7 @@ package services;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,24 +24,13 @@ public class BootstrapServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 3171475695277487275L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String persistMediaName = request.getParameter("persistMediaName");
 		
 		if(persistMediaName == null) {
-			// Affichage du form
-			out.println("<!doctype html>");
-			out.println("<html lang=\"fr\">");
-			out.println("<head><title>Admin</title></head>");
-			out.println("<body>");
-			out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser</p>");
-			out.println("<form action=\"/admin\" method=\"POST\">");
-			out.println("<input type=\"text\" name=\"persistMediaName\">");
-			out.println("<input type=\"submit\" name=\"valider\"");
-			out.println("</form>");
-			out.println("</body>");
-			out.println("</html>");
+			request.setAttribute("valide", false);
 		}
 		else {
 			try {
@@ -51,8 +41,13 @@ public class BootstrapServlet extends HttpServlet {
 				
 			} catch (ClassNotFoundException e) {
 				out.println("L injection de dépendance n est pas valide!");
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 		}
+		out.println("</body>");
+		out.println("</html>");
+		
+		request.setAttribute("persistMediaName", persistMediaName);
+		request.getRequestDispatcher("/WEB-INF/jsp/bootstrap.jsp").forward(request, response);
 	}
 }
