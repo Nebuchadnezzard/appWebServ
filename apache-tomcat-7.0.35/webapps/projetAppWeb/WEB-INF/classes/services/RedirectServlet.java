@@ -18,16 +18,33 @@ public class RedirectServlet extends HttpServlet{
 	private static final long serialVersionUID = -9144090750483154167L;
 	private String login;
 	private String password;
+	private boolean estbiblio;
+	private boolean existeUtil;
 	
 	public RedirectServlet() {
 		this.login = null;
 		this.password = null;
+		this.estbiblio = null;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String pwd = request.getParameter("password");
-         
+        // faire ici le test de type util pour set les booleens
+        
+        // le prof a explique qu'il fallait mieux pas utiliser de jsp et de tout mettre dans les servlets
+        
+        if(estBiblio && existeUtil) {
+        	response.sendRedirect("/accueilbiblio");
+        }
+        else if(!estBiblio && existeUtil) {
+        	response.sendRedirect("/accueilutil");
+        }
+        else {
+        	response.sendRedirect("/authent");
+        }
+        
+        /*
         RequestDispatcher dispatcher = null;
          
          
@@ -39,6 +56,7 @@ public class RedirectServlet extends HttpServlet{
             dispatcher = request.getRequestDispatcher("/login.jsp");
         }
         dispatcher.forward(request, response);
+        */
         
          
     }
