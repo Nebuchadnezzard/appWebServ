@@ -18,13 +18,13 @@ public class RedirectServlet extends HttpServlet{
 	private static final long serialVersionUID = -9144090750483154167L;
 	private String login;
 	private String password;
-	private boolean estbiblio;
+	private boolean estBiblio;
 	private boolean existeUtil;
 	
 	public RedirectServlet() {
 		this.login = null;
 		this.password = null;
-		this.estbiblio = null;
+		this.estBiblio = false;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
