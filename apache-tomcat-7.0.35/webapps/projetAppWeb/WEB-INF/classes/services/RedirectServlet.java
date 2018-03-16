@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mediatheque.Mediatheque;
+import mediatheque.Utilisateur;
+
 @WebServlet ("/redirect")
 public class RedirectServlet extends HttpServlet{
 	
@@ -21,29 +24,24 @@ public class RedirectServlet extends HttpServlet{
 	private boolean estBiblio;
 	private boolean existeUtil;
 	
-	public RedirectServlet() {
-		this.login = null;
-		this.password = null;
-		this.estBiblio = false;
-	}
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String pwd = request.getParameter("password");
-        // faire ici le test de type util pour set les booleens
+        Utilisateur user = Mediatheque.getInstance().getUser(login, pwd);
         
-        // le prof a explique qu'il fallait mieux pas utiliser de jsp et de tout mettre dans les servlets
         
-        if(estBiblio && existeUtil) {
-        	response.sendRedirect("/accueilbiblio");
-        }
-        else if(!estBiblio && existeUtil) {
-        	response.sendRedirect("/accueilutil");
-        }
-        else {
+        
+        if(user == null) {
         	response.sendRedirect("/authent");
         }
-        
+        else if(user.getType() == 1) {
+        	response.sendRedirect("/accueilbiblio");
+        }
+        else {
+        	response.sendRedirect("/accueilutil");
+        }
+       
+     // le prof a explique qu'il fallait mieux ne pas utiliser de jsp et de tout mettre dans les servlets
         /*
         RequestDispatcher dispatcher = null;
          

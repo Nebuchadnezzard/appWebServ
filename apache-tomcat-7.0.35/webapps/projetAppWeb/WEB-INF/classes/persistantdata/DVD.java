@@ -7,25 +7,23 @@ import mediatheque.Utilisateur;
 public class DVD implements Document {
 	private int numero;
 	private String nomDVD;
-	private boolean estEmprunte;
+	private Utilisateur emprunteur;
 	
 	public DVD(String nomDVD, int numero) {
 		this.nomDVD = nomDVD;
 		this.numero = numero;
-		this.estEmprunte = false;
+		this.emprunteur = null;
 	}
 
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
 		synchronized(this) {
-			if(this.estEmprunte == false) {
-				a.emprunter(this);
-				this.estEmprunte = true;
+			if(this.emprunteur == null) {
+				this.emprunteur = a;
 			}
 			else {
 				throw new EmpruntException();
 			}
-		}
 		
 		
 	}
@@ -33,7 +31,7 @@ public class DVD implements Document {
 	@Override
 	public void retour() {
 		synchronized(this) {
-			this.estEmprunte = false;
+			this.emprunteur = null;
 		}
 	}
 

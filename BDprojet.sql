@@ -56,3 +56,6 @@ ALTER TABLE CD
 	ON DELETE CASCADE
 /
 
+INSERT INTO UTILISATEUR (nomUtil, password, typeUtil) VALUES ("Pierre", "abcd", 2);
+INSERT INTO UTILISATEUR (nomUtil, password, typeUtil) VALUES ("Jacques", "abcd", 2);
+INSERT INTO UTILISATEUR (nomUtil, password, typeUtil) VALUES ("Virginie", "abcd", 1);

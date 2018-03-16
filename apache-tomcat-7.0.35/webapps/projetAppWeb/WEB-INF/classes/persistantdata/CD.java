@@ -7,7 +7,7 @@ import mediatheque.Utilisateur;
 public class CD implements Document{
 	private int numero;
 	private String nomCD;
-	private boolean estEmprunte;
+	private Utilisateur emprunteur;
 	
 	public CD(String nomCD, int numero) {
 		this.nomCD = nomCD;
@@ -18,9 +18,8 @@ public class CD implements Document{
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
 		synchronized(this) {
-			if(this.estEmprunte == false) {
-				a.emprunter(this);
-				this.estEmprunte = true;
+			if(this.emprunteur == null) {
+				this.emprunteur = a;
 			}
 			else {
 				throw new EmpruntException();
@@ -33,7 +32,7 @@ public class CD implements Document{
 	@Override
 	public void retour() {
 		synchronized(this) {
-			this.estEmprunte = false;
+			this.emprunteur = null;
 		}
 	}
 
