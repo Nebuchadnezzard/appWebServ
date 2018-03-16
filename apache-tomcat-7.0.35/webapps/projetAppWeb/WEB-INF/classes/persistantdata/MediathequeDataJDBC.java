@@ -81,7 +81,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 			String req = "SELECT * FROM user WHERE login ='" + login + "' AND password='" + password + "'";
 			Statement st = c.createStatement();
 			ResultSet res = st.executeQuery(req);
-			user = new Utilisateur(res.getString("nom"), res.getString("password"));
+			user = new Utilisateur(res.getString("nom"), res.getString("password"), res.getString("typeUtil"));
 
 			res.close();
 			st.close();
