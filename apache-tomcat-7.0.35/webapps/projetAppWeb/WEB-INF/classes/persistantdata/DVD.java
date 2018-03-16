@@ -24,7 +24,7 @@ public class DVD implements Document {
 			else {
 				throw new EmpruntException();
 			}
-		
+		}
 		
 	}
 

@@ -24,7 +24,7 @@ public class Livre implements Document {
 			else {
 				throw new EmpruntException();
 			}
-		
+		}
 	}
 
 	@Override

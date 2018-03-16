@@ -8,6 +8,7 @@ public class CD implements Document{
 	private int numero;
 	private String nomCD;
 	private Utilisateur emprunteur;
+	private boolean estEmprunte;
 	
 	public CD(String nomCD, int numero) {
 		this.nomCD = nomCD;

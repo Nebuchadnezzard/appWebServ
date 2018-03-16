@@ -24,7 +24,7 @@ public class ServiceAjout extends HttpServlet {
 		out.println("<html>");
 		out.println("<head><title>Ajout de documents</title></head>");
 		out.println("<body>");
-		
+		out.println("<p>Ajouter un document</p>");
 		out.println("</body>");
 		out.println("</body>");
 	}

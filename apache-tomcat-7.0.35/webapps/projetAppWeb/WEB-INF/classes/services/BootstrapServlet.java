@@ -33,7 +33,7 @@ public class BootstrapServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head><title>Boot</title></head>");
 		out.println("<body>");
-		out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser</p>");
+		out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser (ex: persistantData.MediathequeDataJDBC )</p>");
 		out.println("<form action=\"/boot\" method=\"post\">");
 		out.println("<input type=\"text\" name=\"persistMediaName\" placeholder=\"" + persistMediaName + "\">");
 		out.println("<input type=\"submit\" name=\"valider\">");

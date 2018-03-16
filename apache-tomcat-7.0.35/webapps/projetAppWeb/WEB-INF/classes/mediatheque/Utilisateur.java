@@ -12,6 +12,7 @@ public class Utilisateur {
 	private String password;
 	private String nom;
 	private int typeUtil;
+	private ArrayList<Document> lesDocs;
 	
 	public Utilisateur(String nom, String password, int typeUtil) {
 		this.nom = nom;
@@ -21,7 +22,7 @@ public class Utilisateur {
 	}
 	
 	public int getType() {
-		return this.typeUtil
+		return this.typeUtil;
 	}
 	
 	
