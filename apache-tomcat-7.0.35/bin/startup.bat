@@ -1,6 +1,5 @@
 set JRE_HOME=C:\Program Files\Java\jre1.8.0_131
-rem à modifier selon emplacement
-set CATALINA_HOME=C:\Users\couderc\Desktop\appweb\appWebServ\apache-tomcat-7.0.35
+set CATALINA_HOME=Z:\projet_appweb\appWebServ\apache-tomcat-7.0.35
 
 @echo off
 rem Licensed to the Apache Software Foundation (ASF) under one or more

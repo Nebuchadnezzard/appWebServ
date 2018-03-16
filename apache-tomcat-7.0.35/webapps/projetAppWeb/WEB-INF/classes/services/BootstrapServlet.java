@@ -29,10 +29,16 @@ public class BootstrapServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String persistMediaName = request.getParameter("persistMediaName");
 		
-		if(persistMediaName == null) {
-			request.setAttribute("valide", false);
-		}
-		else {
+		out.println("<!doctype html>");
+		out.println("<html>");
+		out.println("<head><title>Boot</title></head>");
+		out.println("<body>");
+		out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser</p>");
+		out.println("<form action=\"/boot\" method=\"post\">");
+		out.println("<input type=\"text\" name=\"persistMediaName\" placeholder=\"" + persistMediaName + "\">");
+		out.println("<input type=\"submit\" name=\"valider\">");
+		out.println("</form>");
+		if(persistMediaName != null) {
 			try {
 				
 				// Donne l'implémentation de PersistentMediatheque
@@ -41,13 +47,10 @@ public class BootstrapServlet extends HttpServlet {
 				
 			} catch (ClassNotFoundException e) {
 				out.println("L injection de dépendance n est pas valide!");
-				//e.printStackTrace();
 			}
 		}
 		out.println("</body>");
 		out.println("</html>");
 		
-		request.setAttribute("persistMediaName", persistMediaName);
-		request.getRequestDispatcher("/WEB-INF/jsp/bootstrap.jsp").forward(request, response);
 	}
 }
