@@ -39,6 +39,10 @@ public class Mediatheque {
 			this.data = data;
 	}
 	// fin - lien avec les données persistantes +++++++++
+	
+	public boolean isSet() {
+		return data != null;
+	}
 
 	// ********** action sur le document ***********************
 

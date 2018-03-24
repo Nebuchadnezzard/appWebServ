@@ -10,6 +10,8 @@ import persistantdata.Livre;
 public class Utilisateur {
 	
 	private String password;
+	
+
 	private String nom;
 	private int typeUtil;
 	private ArrayList<Document> lesDocs;
@@ -25,5 +27,15 @@ public class Utilisateur {
 		return this.typeUtil;
 	}
 	
-	
+	public String getPassword() {
+		return password;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public ArrayList<Document> getLesDocs() {
+		return lesDocs;
+	}
 }

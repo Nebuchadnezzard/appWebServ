@@ -31,7 +31,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
-	public List<Document> tousLesDocuments() {
+	public synchronized List<Document> tousLesDocuments() {
 		List<Document> resultat = null;
 		// charger le driver oracle
 
@@ -72,7 +72,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	// va récupérer le User dans la BD et le renvoie
 	// si pas trouvé, renvoie null
 	@Override
-	public Utilisateur getUser(String login, String password) {
+	public synchronized Utilisateur getUser(String login, String password) {
 		Utilisateur user = null;
 
 		try {
@@ -97,7 +97,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	// et le renvoie
 	// si pas trouvé, renvoie null
 	@Override
-	public Document getDocument(int numDocument) {
+	public synchronized Document getDocument(int numDocument) {
 		String nom;
 		String type;
 		int num;
@@ -123,7 +123,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 	}
 
 	@Override
-	public void nouveauDocument(int type, Object... args) {
+	public synchronized void nouveauDocument(int type, Object... args) {
 		// args[0] -> le titre
 		// args [1] --> l'auteur
 		// etc...
