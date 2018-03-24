@@ -4,7 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 @WebServlet("/emprunt")
-public class ServiceEmprunt extends HttpServlet {
+public class EmpruntServlet extends HttpServlet {
 
 	/**
 	 * 

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ajout")
-public class ServiceAjout extends HttpServlet {
+public class AjoutServlet extends HttpServlet {
 
 	/**
 	 * 

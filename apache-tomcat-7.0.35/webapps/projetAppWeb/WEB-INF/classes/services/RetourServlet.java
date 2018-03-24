@@ -4,7 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 @WebServlet("/retour")
-public class ServiceRetour extends HttpServlet {
+public class RetourServlet extends HttpServlet {
 
 	/**
 	 * 
