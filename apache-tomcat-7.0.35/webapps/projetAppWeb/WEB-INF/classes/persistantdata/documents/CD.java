@@ -3,6 +3,7 @@ package persistantdata.documents;
 import mediatheque.Document;
 import mediatheque.EmpruntException;
 import mediatheque.Utilisateur;
+import persistantdata.MediathequeDataJDBC;
 
 public class CD implements Document {
 	private int numero;
@@ -20,6 +21,7 @@ public class CD implements Document {
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
 		if (this.emprunteur == null) {
+			MediathequeDataJDBC.emprunt(this.numero, a.getIdUtil());
 			this.emprunteur = a;
 		} else {
 			throw new EmpruntException();
@@ -29,6 +31,7 @@ public class CD implements Document {
 
 	@Override
 	public void retour() {
+		MediathequeDataJDBC.retour(this.numero);
 		this.emprunteur = null;
 	}
 
@@ -39,7 +42,8 @@ public class CD implements Document {
 				nomCD,
 				auteur,
 				"CD",
-				(emprunteur != null)?emprunteur.getNom():"Aucun"
+				(emprunteur != null)?emprunteur.getNom():"Aucun",
+				(emprunteur != null)?emprunteur.getIdUtil():"Aucun"
 		};
 		return objAffiche;
 	}

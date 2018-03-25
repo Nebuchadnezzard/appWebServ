@@ -72,7 +72,7 @@ public class Mediatheque {
 	public Utilisateur getUser(String login, String password) {
 		// Admin stocké en dur hors de la dépendance
 		if (login.equals("admin") && password.equals("admin")) {
-			return new Utilisateur(0, login, password, null, 3);
+			return new Utilisateur(0, login, password, 3);
 		}
 		
 		

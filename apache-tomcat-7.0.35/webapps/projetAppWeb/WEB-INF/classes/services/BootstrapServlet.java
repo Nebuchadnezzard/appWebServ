@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import mediatheque.Mediatheque;
 import mediatheque.Utilisateur;
 
 /**
@@ -40,6 +41,9 @@ public class BootstrapServlet extends HttpServlet {
 			out.println("<html>");
 			out.println("<head><title>Boot</title></head>");
 			out.println("<body>");
+			if(Mediatheque.getInstance().isSet()) {
+				out.println("D&eacute;prendance charg&eacute;e!");
+			}
 			out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser (ex: persistantdata.MediathequeDataJDBC )</p>");
 			out.println("<form action=\"boot\" method=\"post\">");
 			out.println("<input type=\"text\" name=\"persistMediaName\" placeholder=\"" + persistMediaName + "\">");

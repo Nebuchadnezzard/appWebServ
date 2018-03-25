@@ -27,21 +27,19 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		Utilisateur user = (Utilisateur) session.getAttribute("user");
 		
+		
+		out.println("<!doctype html>");
+		out.println("<html>");
+		out.println("<head><title>Boot</title></head>");
+		out.println("<body>");
+		
 		// Utilisateur non connecté
 		if(user == null) {
-			//req.getRequestDispatcher("auth").forward(req, res);
-			//res.sendRedirect("auth");
 			out.println("<p>Vous n etes pas connect&eacute</p>");
 			out.println("<p><a href=\"auth\">Se connecter</a></p>");
 		}
 		else {
-		
-			out.println("<!doctype html>");
-			out.println("<html>");
-			out.println("<head><title>Boot</title></head>");
-			out.println("<body>");
 			out.println("<p><a href=\"logout\">Deconnection</a></p>");
-			
 			
 			if(user.getType() == 1) { // Abonné
 				out.println("<p><a href=\"emprunt\">Emprunt</a></p>");
@@ -53,9 +51,8 @@ public class HomeServlet extends HttpServlet {
 			else if(user.getType() == 3) { // Admin
 				out.println("<p><a href=\"boot\">Boot</a></p>");
 			}
-			
-			out.println("</body>");
-			out.println("</html>");
 		}
+		out.println("</body>");
+		out.println("</html>");
 	}
 }

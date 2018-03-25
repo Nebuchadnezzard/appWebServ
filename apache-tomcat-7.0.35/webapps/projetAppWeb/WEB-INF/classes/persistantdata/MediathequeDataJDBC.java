@@ -100,16 +100,14 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 			res.next();
 
 			// Création d'un objet utilisateur
-			user = new Utilisateur(res.getInt("numUtil"), res.getString("nomUtil"), res.getString("pwdUtil"), null, res.getInt("typeUtil"));
-			// TODO livres empruntés
+			user = new Utilisateur(res.getInt("numUtil"), res.getString("nomUtil"), res.getString("pwdUtil"), res.getInt("typeUtil"));
+			
 			res.close();
 			st.close();
 			c.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		user.setDocs(getDocsEmprunte(user));
 		return user;
 	}
 
@@ -124,7 +122,6 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 		int typeDoc;
 		int idDoc;
 		int numUtil;
-		Utilisateur emprunteur = null;
 
 		// RECUPERE LE DOCUMENT
 		try {
@@ -182,10 +179,7 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 			utilisateur = new Utilisateur(resUser.getInt("numUtil"), 
 					resUser.getString("nomUtil"), 
 					resUser.getString("pwdUtil"),
-					null, 
 					resUser.getInt("typeUtil"));
-			
-			utilisateur.setDocs(getDocsEmprunte(utilisateur));
 
 			resUser.close();
 			stUser.close();
@@ -196,45 +190,60 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 		
 		return utilisateur;
 	}
-	
-	/**
-	 * Donne la liste des documents empruntés par un utilisateur
-	 * @param utilisateur
-	 * @return Liste des documents
-	 */
-	private ArrayList<Document> getDocsEmprunte(Utilisateur utilisateur) {
-		ArrayList<Document> liste = new ArrayList<>();
-		
-		try {
-			Connection c = DriverManager.getConnection(url, user, password);
-			// Création et execution de la requete
-			String reqDocs = "SELECT * FROM Document WHERE numUtil = " + utilisateur.getIdUtil();
-			Statement stDocs = c.createStatement();
-			ResultSet resDocs = stDocs.executeQuery(reqDocs);
-			
-			while(resDocs.next()) {
-				liste.add(FactoryDocument.creerDoc(resDocs.getString("nomDoc"), 
-						resDocs.getString("auteurDoc"), 
-						resDocs.getInt("idDoc"), 
-						utilisateur, 
-						resDocs.getInt("typeDoc")));
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return liste;
-	}
 
 	@Override
 	public void nouveauDocument(int type, Object... args) {
 		// args[0] -> le titre
 		// args [1] --> l'auteur
 		// etc...
-		String reqInsertDoc ="INSERT INTO Document(nomDoc, auteurDoc, typeDoc)"
-				+ "VALUES(" + args[0] + ", " + args[1] + ", " + type + ")";
+		
+		try {
+			Connection c = DriverManager.getConnection(url, user, password);
+			
+			String reqInsertDoc ="INSERT INTO Document(nomDoc, auteurDoc, typeDoc)"
+					+ "VALUES('" + args[0] + "', '" + args[1] + "', " + type + ")";
+			Statement stInsertDoc = c.createStatement();
+			stInsertDoc.executeUpdate(reqInsertDoc);
+			
+			stInsertDoc.close();
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	public static void emprunt(int numDoc, int idUtil) {
+		
+		try {
+			Connection c = DriverManager.getConnection(url, user, password);
+			
+			String reqEmpr = "UPDATE Document SET numUtil =" + idUtil + " WHERE idDoc =" + numDoc;
+			Statement stEmpr = c.createStatement();
+			stEmpr.executeUpdate(reqEmpr);
+			
+			stEmpr.close();
+			c.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void retour(int idDoc) {
+
+		try {
+			Connection c = DriverManager.getConnection(url, user, password);
+			
+			String reqRet = "UPDATE Document SET numUtil = NULL WHERE idDoc = " + idDoc;
+			Statement stRet = c.createStatement();
+			stRet.executeUpdate(reqRet);
+			
+			stRet.close();
+			c.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
