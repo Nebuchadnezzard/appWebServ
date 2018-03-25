@@ -7,15 +7,15 @@ import persistantdata.documents.Livre;
 
 public class FactoryDocument {
 
-	public static Document creerDoc(String nom, int num, String type) {
+	public static Document creerDoc(String nom, String auteur, int num, Utilisateur user, int type) {
 
 		switch (type) {
-		case "CD":
-			return new CD(nom, num);
-		case "DVD":
-			return new DVD(nom, num);
-		case "Livre":
-			return new Livre(nom, num);
+		case 0: // CD
+			return new CD(nom, auteur, num, user);
+		case 1: // DVD
+			return new DVD(nom, auteur, num, user);
+		case 2: // Livre
+			return new Livre(nom, auteur, num, user);
 		}
 		return null;
 

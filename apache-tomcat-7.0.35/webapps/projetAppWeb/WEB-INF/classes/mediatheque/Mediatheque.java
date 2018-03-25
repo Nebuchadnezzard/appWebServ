@@ -39,7 +39,7 @@ public class Mediatheque {
 			this.data = data;
 	}
 	// fin - lien avec les données persistantes +++++++++
-	
+
 	public boolean isSet() {
 		return data != null;
 	}
@@ -70,6 +70,12 @@ public class Mediatheque {
 	// si pas trouvé, renvoie null
 
 	public Utilisateur getUser(String login, String password) {
+		// Admin stocké en dur hors de la dépendance
+		if (login.equals("admin") && password.equals("admin")) {
+			return new Utilisateur(0, login, password, null, 3);
+		}
+		
+		
 		return data.getUser(login, password);
 	}
 

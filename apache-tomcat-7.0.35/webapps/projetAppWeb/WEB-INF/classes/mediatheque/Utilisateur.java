@@ -1,11 +1,6 @@
 package mediatheque;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import com.sun.xml.internal.txw2.Document;
-
-import persistantdata.documents.Livre;
 
 public class Utilisateur {
 	
@@ -15,14 +10,20 @@ public class Utilisateur {
 	private String nom;
 	private int typeUtil;
 	private ArrayList<Document> lesDocs;
+	private int idUtil;
 	
-	public Utilisateur(String nom, String password, int typeUtil) {
+	public Utilisateur(int idUtil, String nom, String password, ArrayList<Document>docsEmpr, int typeUtil) {
+		this.idUtil = idUtil;
 		this.nom = nom;
 		this.password = password;
 		this.typeUtil = typeUtil;
 		this.lesDocs = new ArrayList<Document>();
 	}
 	
+	public int getIdUtil() {
+		return idUtil;
+	}
+
 	public int getType() {
 		return this.typeUtil;
 	}
@@ -37,5 +38,9 @@ public class Utilisateur {
 
 	public ArrayList<Document> getLesDocs() {
 		return lesDocs;
+	}
+	
+	public void setDocs(ArrayList<Document> docs) {
+		this.lesDocs = docs;
 	}
 }

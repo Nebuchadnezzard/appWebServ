@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import mediatheque.Utilisateur;
 
 /**
  * Classe qui déclare quelle PersistentMediatheque charger
@@ -29,28 +32,35 @@ public class BootstrapServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String persistMediaName = request.getParameter("persistMediaName");
 		
-		out.println("<!doctype html>");
-		out.println("<html>");
-		out.println("<head><title>Boot</title></head>");
-		out.println("<body>");
-		out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser (ex: persistantdata.MediathequeDataJDBC )</p>");
-		out.println("<form action=\"boot\" method=\"post\">");
-		out.println("<input type=\"text\" name=\"persistMediaName\" placeholder=\"" + persistMediaName + "\">");
-		out.println("<input type=\"submit\" name=\"valider\">");
-		out.println("</form>");
-		if(persistMediaName != null) {
-			try {
-				
-				// Donne l'implémentation de PersistentMediatheque
-				// à la médiathèque via le bloc static
-				Class.forName(persistMediaName);
-				
-			} catch (ClassNotFoundException e) {
-				out.println("L injection de dépendance n est pas valide!");
-			}
-		}
-		out.println("</body>");
-		out.println("</html>");
+		HttpSession session = request.getSession();
+		Utilisateur user = (Utilisateur) session.getAttribute("user");
 		
+		if(user.getType() == 3) { // Admin
+			out.println("<!doctype html>");
+			out.println("<html>");
+			out.println("<head><title>Boot</title></head>");
+			out.println("<body>");
+			out.println("<p>Veuillez inserer le nom de l implementation de PersistantMediatheque a utiliser (ex: persistantdata.MediathequeDataJDBC )</p>");
+			out.println("<form action=\"boot\" method=\"post\">");
+			out.println("<input type=\"text\" name=\"persistMediaName\" placeholder=\"" + persistMediaName + "\">");
+			out.println("<input type=\"submit\" name=\"valider\">");
+			out.println("</form>");
+			if(persistMediaName != null) {
+				try {
+					
+					// Donne l'implémentation de PersistentMediatheque
+					// à la médiathèque via le bloc static
+					Class.forName(persistMediaName);
+					
+				} catch (ClassNotFoundException e) {
+					out.println("L injection de dépendance n est pas valide!");
+				}
+			}
+			out.println("</body>");
+			out.println("</html>");
+		}
+		else {
+			response.sendError(HttpServletResponse.SC_NOT_FOUND);
+		}
 	}
 }

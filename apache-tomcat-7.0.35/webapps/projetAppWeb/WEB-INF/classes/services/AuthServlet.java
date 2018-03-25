@@ -65,15 +65,10 @@ public class AuthServlet extends HttpServlet {
 			}
 			else {
 				HttpSession session = request.getSession();
-				session.setAttribute("session", user);
-				out.println("<html>");
-				out.println("<head>");
-				out.println("<title>Connexion</title>");
-				out.println("</head>");
-				out.println("<body>");
-				out.println("<p>Connecte</p>");
-				out.println("</body>");
-				out.println("</html>");
+				session.setAttribute("user", user);
+				
+				//request.getRequestDispatcher("home").forward(request, response);
+				response.sendRedirect("home");
 			}
 			
 		}

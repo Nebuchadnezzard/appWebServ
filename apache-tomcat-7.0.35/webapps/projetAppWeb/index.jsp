@@ -6,8 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <p><a href="boot">Boot admin</a></p>
-		<br>
         <fieldset id="fscoauth">
 			<form method="get" action="auth">
 				<p><button type="submit">Connexion</button></p>

@@ -8,36 +8,39 @@ public class Livre implements Document {
 	private int numero;
 	private String nomLivre;
 	private Utilisateur emprunteur;
-	
-	public Livre(String nomLivre, int numero) {
+	private String auteur;
+
+	public Livre(String nomLivre, String auteur, int numero, Utilisateur user) {
 		this.nomLivre = nomLivre;
+		this.auteur = auteur;
 		this.numero = numero;
-		this.emprunteur = null;
+		this.emprunteur = user;
 	}
 
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
-		synchronized(this) {
-			if(this.emprunteur == null) {
-				this.emprunteur = a;
-			}
-			else {
-				throw new EmpruntException();
-			}
+		if (this.emprunteur == null) {
+			this.emprunteur = a;
+		} else {
+			throw new EmpruntException();
 		}
 	}
 
 	@Override
 	public void retour() {
-		synchronized(this) {
-			this.emprunteur = null;
-		}
+		this.emprunteur = null;
 	}
 
 	@Override
 	public Object[] affiche() {
-		// TODO Auto-generated method stub
-		return null;
+		Object[] objAffiche = new Object[] {
+				numero,
+				nomLivre,
+				auteur,
+				"Livre",
+				(emprunteur != null)?emprunteur.getNom():"Aucun"
+		};
+		return objAffiche;
 	}
 
 }

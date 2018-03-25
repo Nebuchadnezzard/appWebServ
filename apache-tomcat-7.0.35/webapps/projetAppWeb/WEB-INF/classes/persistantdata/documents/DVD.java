@@ -8,37 +8,40 @@ public class DVD implements Document {
 	private int numero;
 	private String nomDVD;
 	private Utilisateur emprunteur;
-	
-	public DVD(String nomDVD, int numero) {
+	private String auteur;
+
+	public DVD(String nomDVD, String auteur, int numero, Utilisateur user) {
 		this.nomDVD = nomDVD;
+		this.auteur = auteur;
 		this.numero = numero;
-		this.emprunteur = null;
+		this.emprunteur = user;
 	}
 
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
-		synchronized(this) {
-			if(this.emprunteur == null) {
-				this.emprunteur = a;
-			}
-			else {
-				throw new EmpruntException();
-			}
+		if (this.emprunteur == null) {
+			this.emprunteur = a;
+		} else {
+			throw new EmpruntException();
 		}
-		
+
 	}
 
 	@Override
 	public void retour() {
-		synchronized(this) {
-			this.emprunteur = null;
-		}
+		this.emprunteur = null;
 	}
 
 	@Override
 	public Object[] affiche() {
-		// TODO Auto-generated method stub
-		return null;
+		Object[] objAffiche = new Object[] {
+				numero,
+				nomDVD,
+				auteur,
+				"DVD",
+				(emprunteur != null)?emprunteur.getNom():"Aucun"
+		};
+		return objAffiche;
 	}
 
 }
