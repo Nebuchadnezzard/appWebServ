@@ -1,6 +1,9 @@
 package persistantdata;
 
 import mediatheque.*;
+import persistantdata.documents.CD;
+import persistantdata.documents.DVD;
+import persistantdata.documents.Livre;
 
 public class FactoryDocument {
 

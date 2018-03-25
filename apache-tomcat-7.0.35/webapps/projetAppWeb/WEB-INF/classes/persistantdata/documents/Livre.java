@@ -1,4 +1,4 @@
-package persistantdata;
+package persistantdata.documents;
 
 import mediatheque.Document;
 import mediatheque.EmpruntException;

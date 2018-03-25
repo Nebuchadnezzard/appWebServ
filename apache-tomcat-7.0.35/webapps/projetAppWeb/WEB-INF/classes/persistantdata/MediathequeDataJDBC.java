@@ -13,13 +13,13 @@ import mediatheque.*;
 // via une auto-déclaration dans son bloc static
 
 public class MediathequeDataJDBC implements PersistentMediatheque {
-	private static String url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-	private static String user = "GRP202US4";
-	private static String password = "GRP202US4";
+	private static String url = "jdbc:mysql://localhost:3306/mediadb?autoReconnect=true&useSSL=false";
+	private static String user = "root";
+	private static String password = "root";
 
 	static {
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -78,10 +78,12 @@ public class MediathequeDataJDBC implements PersistentMediatheque {
 		try {
 			Connection c = DriverManager.getConnection(MediathequeDataJDBC.url, MediathequeDataJDBC.user,
 					MediathequeDataJDBC.password);
-			String req = "SELECT * FROM user WHERE login ='" + login + "' AND password='" + password + "'";
+			String req = "SELECT * FROM Utilisateur WHERE nomUtil ='" + login + "' AND pwdUtil='" + password + "'";
 			Statement st = c.createStatement();
 			ResultSet res = st.executeQuery(req);
-			user = new Utilisateur(res.getString("nom"), res.getString("password"), Integer.parseInt(res.getString("typeUtil")));
+			res.next();
+			System.out.println(res.getString("nomUtil"));
+			user = new Utilisateur(res.getString("nomUtil"), res.getString("pwdUtil"), Integer.parseInt(res.getString("typeUtil")));
 
 			res.close();
 			st.close();

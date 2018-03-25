@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.sun.xml.internal.txw2.Document;
 
-import persistantdata.Livre;
+import persistantdata.documents.Livre;
 
 public class Utilisateur {
 	
